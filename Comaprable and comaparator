@@ -1,0 +1,64 @@
+In Java, both `Comparator` and `comparing` are used to define custom sorting logic, but they serve different purposes:
+
+---
+
+### ✅ **1. `Comparator` Interface**
+
+* **Definition**: It's a functional interface used to define a custom comparison logic between two objects.
+* **Syntax**:
+
+  ```java
+  Comparator<Employee> byName = new Comparator<Employee>() {
+      public int compare(Employee e1, Employee e2) {
+          return e1.getName().compareTo(e2.getName());
+      }
+  };
+  ```
+* **Since Java 8**, you can use a lambda:
+
+  ```java
+  Comparator<Employee> byName = (e1, e2) -> e1.getName().compareTo(e2.getName());
+  ```
+
+---
+
+### ✅ **2. `Comparator.comparing()` Method**
+
+* **Definition**: A **static method** in the `Comparator` interface used to simplify comparator creation based on a key extractor function.
+* **Syntax**:
+
+  ```java
+  Comparator<Employee> byName = Comparator.comparing(Employee::getName);
+  ```
+* It's equivalent to writing:
+
+  ```java
+  Comparator<Employee> byName = (e1, e2) -> e1.getName().compareTo(e2.getName());
+  ```
+
+---
+
+### ⚖️ **Key Differences**
+
+| Aspect       | `Comparator` Interface              | `Comparator.comparing()`                        |
+| ------------ | ----------------------------------- | ----------------------------------------------- |
+| Type         | Interface                           | Static method in `Comparator`                   |
+| Purpose      | To define custom comparison logic   | To create a comparator based on a key extractor |
+| Verbosity    | More verbose, especially pre-Java 8 | More concise and readable                       |
+| Java Version | Available since Java 1.2            | Introduced in Java 8 (with lambdas and streams) |
+
+---
+
+### ✅ Example
+
+```java
+List<Employee> list = ...;
+
+// Using Comparator interface (lambda):
+list.sort((e1, e2) -> e1.getAge() - e2.getAge());
+
+// Using Comparator.comparing:
+list.sort(Comparator.comparing(Employee::getAge));
+```
+
+Would you like a visual flowchart to illustrate how `Comparator.comparing()` works internally?
