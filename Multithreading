@@ -1,0 +1,109 @@
+**Multithreading in Java** is a core feature that allows concurrent execution of two or more parts of a program to maximize CPU utilization. Each part of such a program is called a **thread**, and each thread defines a separate path of execution.
+
+---
+
+### 🔧 **Why Use Multithreading?**
+
+* Better CPU utilization (parallelism)
+* Improved performance for IO or CPU-intensive tasks
+* Responsiveness in GUI apps
+* Efficient resource sharing
+
+---
+
+### 🧵 **Thread Creation in Java**
+
+Java provides two main ways to create threads:
+
+#### 1. **By Extending the `Thread` class**
+
+```java
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start(); // starts a new thread
+    }
+}
+```
+
+#### 2. **By Implementing the `Runnable` interface**
+
+```java
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable thread is running...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable());
+        t1.start();
+    }
+}
+```
+
+---
+
+### 🔄 **Thread Lifecycle**
+
+1. **New**
+2. **Runnable**
+3. **Running**
+4. **Blocked/Waiting**
+5. **Terminated**
+
+---
+
+### 🧰 **Important Methods**
+
+* `start()` – starts the thread
+* `run()` – contains the code to execute
+* `sleep(ms)` – pauses the thread
+* `join()` – waits for another thread to die
+* `isAlive()` – checks if thread is alive
+
+---
+
+### 🔐 **Thread Synchronization**
+
+To prevent thread interference and memory inconsistency, use:
+
+```java
+synchronized void method() {
+   // critical section
+}
+```
+
+---
+
+### 🔄 **Example with Multiple Threads**
+
+```java
+class Counter extends Thread {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i + " " + Thread.currentThread().getName());
+        }
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Counter t1 = new Counter();
+        Counter t2 = new Counter();
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+---
+
+Would you like examples involving thread pools or concurrent package (`java.util.concurrent`)?
