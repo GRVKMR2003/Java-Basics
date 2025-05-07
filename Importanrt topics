@@ -1,0 +1,90 @@
+Here’s a list of **important Java topics** commonly asked in interviews, especially for roles ranging from entry-level to mid-level software development:
+
+---
+
+### 🔹 **Core Java**
+
+1. **OOP Concepts** – Inheritance, Polymorphism, Abstraction, Encapsulation (with examples)
+2. **Data Types & Variables**
+3. **Control Statements** – if-else, switch, loops
+4. **Arrays and Strings**
+
+   * Immutable nature of Strings
+   * StringBuilder vs StringBuffer
+5. **Exception Handling**
+
+   * try-catch-finally
+   * Checked vs Unchecked exceptions
+   * Custom exceptions
+
+---
+
+### 🔹 **Advanced Java Concepts**
+
+6. **Collections Framework**
+
+   * List, Set, Map, Queue
+   * ArrayList vs LinkedList, HashMap vs TreeMap
+   * Iterator vs ListIterator
+7. **Generics**
+
+   * Wildcards (`? extends`, `? super`)
+8. **Multithreading and Concurrency**
+
+   * Thread creation, Runnable, Callable
+   * `synchronized`, `volatile`, wait/notify
+   * Thread lifecycle
+   * Executor framework
+9. **Java 8 Features**
+
+   * Functional interfaces (`Predicate`, `Function`, etc.)
+   * Lambda expressions
+   * Stream API
+   * Optional class
+   * Method references
+
+---
+
+### 🔹 **Memory Management**
+
+10. **Heap vs Stack**
+11. **Garbage Collection**
+
+    * Finalize, GC tuning basics
+
+---
+
+### 🔹 **Design Patterns (Basics)**
+
+12. **Singleton, Factory, Observer, Builder**
+
+---
+
+### 🔹 **File Handling**
+
+13. **File I/O using `java.io` and `java.nio`**
+14. **Serialization and Deserialization**
+
+---
+
+### 🔹 **JVM Internals**
+
+15. **JVM Architecture**
+
+    * Classloader, Bytecode, JIT, Memory areas
+16. **Class loading & Linking**
+
+---
+
+### 🔹 **Miscellaneous**
+
+17. **Equals and HashCode**
+18. **Immutable classes**
+19. **Comparable vs Comparator**
+20. **Enum, Wrapper classes, Autoboxing/Unboxing**
+21. **Reflection API (basic usage)**
+22. **Annotations (custom and built-in)**
+
+---
+
+Would you like a focused list of topics based on a specific role (e.g., backend dev, Android dev, or fresher)?
